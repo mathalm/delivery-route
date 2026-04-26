@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚚 Delivery Route
 
-## Getting Started
+Plan multi-stop driving routes on an interactive map. Pick locations, see **alternative paths** from [OSRM](https://project-osrm.org/), compare **time** and **distance**, and highlight stops as you explore the list.
 
-First, run the development server:
+---
+
+## ✨ Features
+
+| | |
+| :--- | :--- |
+| 🗺️ | **Map-first UI** — pan, zoom, and compass controls centered on NYC |
+| 📍 | **Multi-select stops** — autocomplete over preset New York locations |
+| 🛣️ | **Route alternatives** — OSRM returns several options; click to focus the active route |
+| ⏱️ | **Side panel** — duration, distance, and a “Fastest” badge on the primary option |
+| ✨ | **Hover preview** — temporarily highlight a location on the map while browsing suggestions |
+
+---
+
+## 🧱 Tech stack
+
+| Piece | Role |
+| :--- | :--- |
+| [**Next.js**](https://nextjs.org/) | App framework & dev server |
+| [**React**](https://react.dev/) | UI |
+| [**Tailwind CSS**](https://tailwindcss.com/) | Styling |
+| [**shadcn**](https://ui.shadcn.com/) (UI kit) | Components & patterns |
+| [**mapcn**](https://mapcn.dev/) / **MapLibre** | Map, markers, routes, controls |
+| [**OSRM**](https://router.project-osrm.org/) (public demo router) | Driving directions & geometry |
+| [**Bun**](https://bun.sh/) | Fast install & `bun dev` (npm/pnpm/yarn work too) |
+
+---
+
+## 🚀 Quick start
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+# install
+bun install
+
+# dev server → http://localhost:3000
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Other package managers:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install && npm run dev
+# or
+pnpm install && pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open [http://localhost:3000](http://localhost:3000), use the location combobox to add stops, and watch routes update on the map.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📁 Where things live
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Path | What |
+| :--- | :--- |
+| `app/page.tsx` | Main screen: map, OSRM fetch, route state, autocomplete |
+| `components/ui/map.tsx` | Map primitives (routes, markers, controls) |
+| `components/Autocomplete.tsx` | Location search / multi-select |
+| `components/location.ts` | Preset coordinates & names |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🏗️ Build & lint
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+bun run build
+bun run lint
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📚 Learn more
+
+- [Next.js docs](https://nextjs.org/docs) — routing, App Router, deployment
+- [OSRM HTTP API](http://project-osrm.org/docs/v5.24.0/api/) — `route` service options used by the app
+
+---

@@ -1,5 +1,8 @@
 # 🚚 Delivery Route
 
+<img width="1919" height="925" alt="image" src="https://github.com/user-attachments/assets/ecba5758-74d9-4488-af9f-483045bbdaaa" />
+
+
 Plan multi-stop driving routes on an interactive map. Pick locations, see **alternative paths** from [OSRM](https://project-osrm.org/), compare **time** and **distance**, and highlight stops as you explore the list.
 
 ---
@@ -38,14 +41,6 @@ bun install
 
 # dev server → http://localhost:3000
 bun dev
-```
-
-Other package managers:
-
-```bash
-npm install && npm run dev
-# or
-pnpm install && pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000), use the location combobox to add stops, and watch routes update on the map.
